@@ -6,10 +6,10 @@ runner
 
 
 
-def add_user
-    user_input = gets.chomp.strip
-    user = User.create(name: user_input)
-end
+# def add_user
+#     user_input = gets.chomp.strip
+#     user = User.create(name: user_input)
+# end
 
 # puts "Howdy #{add_user.name}! Welcome to Flatiron Simulator 9000"
 
