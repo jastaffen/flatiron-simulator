@@ -9,7 +9,8 @@
 # migrations use external dependencies or application code.
 #
 # It's strongly recommended that you check this file into your version control system.
-ActiveRecord::Schema.define(version: 2019_10_21_020757) do
+
+ActiveRecord::Schema.define(version: 2019_10_21_212319) do
 
   create_table "options", force: :cascade do |t|
     t.string "text"
@@ -19,6 +20,11 @@ ActiveRecord::Schema.define(version: 2019_10_21_020757) do
 
   create_table "scenes", force: :cascade do |t|
     t.string "story"
+  end
+
+  create_table "useroptions", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "option_id"
   end
 
   create_table "users", force: :cascade do |t|
