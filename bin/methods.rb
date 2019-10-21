@@ -41,5 +41,5 @@ end
 def runner
     welcome
     u1 = user
-    puts "Howdy #{u1.name} Ready to begin Flatiron Simulator 9000?"
+    puts "Howdy #{u1.name} Ready to begin Flatiron Simulator 10,000?"
 end
