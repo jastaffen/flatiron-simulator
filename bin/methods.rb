@@ -1,5 +1,5 @@
 # require_relative '../config/environment'
-require 'pry'
+
 def welcome
     puts 
     puts
@@ -24,6 +24,10 @@ end
 #     gets.chomp.strip
 # end
 
+def user_seed
+    Faker::Name.first_name
+end 
+
 def user
     user_input = gets.chomp.strip
     if user_input.downcase == "gene"
@@ -35,8 +39,6 @@ def user
     end
     user
 end
-
-
 
 def runner
     welcome
