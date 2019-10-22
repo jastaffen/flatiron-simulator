@@ -51,13 +51,37 @@ def user
     user
 end
 
+def scene1
+    puts "#{Scene.first.story}"
+    options = TTY::Prompt.new
+    options.select("Choose:", Scene.first.options.map {|option| option.text})
+end
+
+
+
 def runner
     welcome
     # start
     unless start == 'exit'
         u1 = user
         puts "=" * 50
-        puts "Howdy #{u1.name}! Ready to begin Flatiron Simulator 9,000?"
-        puts "=" * 50
+        puts
+        puts "Howdy #{u1.name}!"
+        yes_or_no = TTY::Prompt.new
+        yes_or_no.ask("Ready to begin Flatiron Simulator 9,000?")
+        puts
+        puts "=" * 50 
+        puts "=" * 40
+        puts "=" * 30
+        puts "=" * 20
+        puts "=" * 10
+        puts "SPLAT!" + " " * 30 + "git vom!"
+        puts "~" * 10
+        puts "~" * 20
+        puts "~" * 30
+        puts "~" * 40
+        puts "~" * 50
+        puts 
+        scene1
     end
 end
