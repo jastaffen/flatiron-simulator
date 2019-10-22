@@ -9,7 +9,7 @@ gem "faker"
 gem 'bundler'
 gem 'rake'
 
-gem 'tty-prompt'
+gem 'tty'
 
 gem 'rmagick'
 gem 'catpix'
