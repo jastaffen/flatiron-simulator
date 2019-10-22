@@ -105,7 +105,7 @@ option13 = Option.create(text: "poop", from_scene_id: 4, to_scene_id: 5)
 #comm_happy_hour
 option14 = Option.create(text: "drink (no pressure though..almond milk is totally acceptable)", from_scene_id: 5, to_scene_id: 6)
 option15 = Option.create(text: "drink while playing bananagrams", from_scene_id: 5, to_scene_id: 6)
-option16 = Option.create(text: "drink whlie playing pong (and drinking more)", from_scene_id: 5, to_scene: 6)
+option16 = Option.create(text: "drink whlie playing pong (and drinking more)", from_scene_id: 5, to_scene_id: 6)
 option17 = Option.create(text: "do labs, be antisocial, but maybe with a beer?", from_scene_id: 5, to_scene_id: 7)
 
 
