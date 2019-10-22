@@ -1,4 +1,5 @@
 # require_relative '../config/environment'
+require 'tty'
 
 def welcome
     puts 
@@ -17,31 +18,58 @@ def welcome
     puts "~" * 40
     puts
     puts
-    puts "What's your name?"
+    # puts "What's your name?"
 end
 
 # def get_user_input
 #     gets.chomp.strip
 # end
 
-def user_seed
-    Faker::Name.first_name
-end 
+# def user_seed
+#     Faker::Name.first_name
+# end 
+
+def start
+    # puts "What do you want to do?"
+    prompt = TTY::Prompt.new
+    decision = prompt.select("What do you want to do?", ["start game", "exit"])
+end
+
+def end_game
+    puts "Thanks for playing!"
+end
 
 def user
-    user_input = gets.chomp.strip
-    if user_input.downcase == "gene"
+    # user_input = gets.chomp.strip
+    # if user_input.downcase == "gene"
+    #     user = User.create(name: "RevolutionDamnation")
+    # elsif user_input.downcase == "tony"
+    #     user = User.create(name: "poop")
+    # else
+    #     user = User.create(name: user_input)
+    # end
+    # user
+    prompt = TTY::Prompt.new
+    user = prompt.ask("What is your name?")
+    if User.find_by_name(user)
+        user = User.find_by_name(user)
+    elsif user.downcase == "gene"
         user = User.create(name: "RevolutionDamnation")
-    elsif user_input.downcase == "tony"
+    elsif user.downcase == "tony"
         user = User.create(name: "poop")
     else
-        user = User.create(name: user_input)
+        user = User.create(name: user)
     end
     user
 end
 
 def runner
     welcome
-    u1 = user
-    puts "Howdy #{u1.name} Ready to begin Flatiron Simulator 9,000?"
+    # start
+    unless start == 'exit'
+        u1 = user
+        puts "=" * 50
+        puts "Howdy #{u1.name}! Ready to begin Flatiron Simulator 9,000?"
+        puts "=" * 50
+    end
 end

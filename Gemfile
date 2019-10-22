@@ -8,3 +8,4 @@ gem "require_all"
 gem "faker"
 gem 'bundler'
 gem 'rake'
+gem 'tty'
