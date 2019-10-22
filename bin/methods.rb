@@ -52,12 +52,34 @@ def user_login
     user
 end
 
-def scene1
+def storyline
     puts "#{Scene.first.story}"
     options = TTY::Prompt.new
+    puts
+    puts
     decision_text = options.select("Choose:", Scene.first.options.map {|option| option.text})
     choice = Option.find_by(text: decision_text)
     uo1 = UserOption.create(user_id: @u1.id, option_id: choice.id)
+    puts
+    puts
+    while choice.to_scene do
+        puts "#{choice.to_scene.story}"
+        options = TTY::Prompt.new
+        puts
+        puts
+        decision_text = options.select("Choose:", choice.to_scene.options.map {|option| option.text})
+        choice = Option.find_by(text: decision_text)
+        uo1 = UserOption.create(user_id: @u1.id, option_id: choice.id)
+        puts
+        puts
+        if choice.to_scene_id == 11 || choice.to_scene_id == 12
+            puts "#{choice.to_scene.story}"
+            break
+        end
+    end
+    puts
+    puts
+    puts "#{Scene.last.story}"
 end
 
 
@@ -85,6 +107,6 @@ def runner
         puts "~" * 40
         puts "~" * 50
         puts 
-        scene1
+        storyline
     end
 end
