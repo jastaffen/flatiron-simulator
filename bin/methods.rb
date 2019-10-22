@@ -27,7 +27,7 @@ def end_game
     puts "Thanks for playing!"
 end
 
-def user
+def user_login
     # user_input = gets.chomp.strip
     # if user_input.downcase == "gene"
     #     user = User.create(name: "RevolutionDamnation")
@@ -54,7 +54,9 @@ end
 def scene1
     puts "#{Scene.first.story}"
     options = TTY::Prompt.new
-    options.select("Choose:", Scene.first.options.map {|option| option.text})
+    decision_text = options.select("Choose:", Scene.first.options.map {|option| option.text})
+    choice = Option.find_by(text: decision_text)
+    uo1 = UserOption.create(user_id: @u1.id, option_id: choice.id)
 end
 
 
@@ -63,10 +65,10 @@ def runner
     welcome
     # start
     unless start == 'exit'
-        u1 = user
+        @u1 = user_login
         puts "=" * 50
         puts
-        puts "Howdy #{u1.name}!"
+        puts "Howdy #{@u1.name}!"
         yes_or_no = TTY::Prompt.new
         yes_or_no.ask("Ready to begin Flatiron Simulator 9,000?")
         puts
