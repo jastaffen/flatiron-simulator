@@ -10,16 +10,8 @@ def welcome
     Catpix::print_image "Flatiron-Logo.jpg"
 end
 
-# def get_user_input
-#     gets.chomp.strip
-# end
-
-# def user_seed
-#     Faker::Name.first_name
-# end 
 
 def start
-    # puts "What do you want to do?"
     prompt = TTY::Prompt.new
     decision = prompt.select("What do you want to do?", ["start game", "exit"])
 end
@@ -29,17 +21,8 @@ def end_game
 end
 
 def user_login
-    # user_input = gets.chomp.strip
-    # if user_input.downcase == "gene"
-    #     user = User.create(name: "RevolutionDamnation")
-    # elsif user_input.downcase == "tony"
-    #     user = User.create(name: "poop")
-    # else
-    #     user = User.create(name: user_input)
-    # end
-    # user
     prompt = TTY::Prompt.new
-    user = prompt.ask("What is your name?")
+    user = prompt.ask("What is your name?", required: true)
     if User.find_by_name(user)
         user = User.find_by_name(user)
     elsif user.downcase == "gene"
@@ -54,6 +37,10 @@ end
 
 def storyline
     puts "#{Scene.first.story}"
+    keyhit = TTY::Prompt.new
+    puts
+    keyhit.keypress("press a key")
+    puts
     options = TTY::Prompt.new
     puts
     puts
@@ -64,6 +51,10 @@ def storyline
     puts
     while choice.to_scene do
         puts "#{choice.to_scene.story}"
+        puts
+        keyhit2 = TTY::Prompt.new
+        keyhit2.keypress("press something!")
+        puts
         options = TTY::Prompt.new
         puts
         puts
@@ -74,12 +65,20 @@ def storyline
         puts
         if choice.to_scene_id == 11 || choice.to_scene_id == 12
             puts "#{choice.to_scene.story}"
+            next_scene = TTY::Prompt.new
+            puts
+            puts
+            next_scene.keypress("Press any key to continue")
             break
         end
     end
     puts
     puts
+    puts "**"
+    puts 
     puts "#{Scene.last.story}"
+    puts 
+    puts "**"
 end
 
 
@@ -93,7 +92,7 @@ def runner
         puts
         puts "Howdy #{@u1.name}!"
         yes_or_no = TTY::Prompt.new
-        yes_or_no.ask("Ready to begin Flatiron Simulator 9,000?")
+        yes_or_no.keypress("Ready to begin Flatiron Simulator 9,000? Press any key to begin!")
         puts
         puts "=" * 50 
         puts "=" * 40
@@ -108,5 +107,18 @@ def runner
         puts "~" * 50
         puts 
         storyline
+        puts
+        puts
+        view_your_stats = TTY::Prompt.new
+        stats = view_your_stats.select("Do you want to view your experience?", ["yes", "no"])
+        puts
+        puts
+        if stats == "yes"
+            puts "HERE IS WHAT YOU DID, #{@u1.name}!"
+            @u1.options.each { |option| puts "#{option.from_scene.story} \n \n #{option.text} \n \n" }
+            puts 
+            puts "#{@u1.options.last.to_scene.story}"
+        end
+        @u1.user_options.destroy_all
     end
 end
