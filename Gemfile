@@ -9,8 +9,8 @@ gem "faker"
 gem 'bundler'
 gem 'rake'
 
-gem 'tty'
+gem 'tty-prompt'
 
-# gem 'rmagick', `~> 2.0`
-# gem 'catpix'
+gem 'rmagick'
+gem 'catpix'
 
