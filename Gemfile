@@ -8,5 +8,9 @@ gem "require_all"
 gem "faker"
 gem 'bundler'
 gem 'rake'
+
+gem 'tty'
+
 # gem 'rmagick', `~> 2.0`
 # gem 'catpix'
+

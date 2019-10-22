@@ -2,6 +2,7 @@
 
 # require_relative "../bin/methods.rb"
 require_relative "../config/environment"
+require_relative "seeds_for_options.rb"
 
 code_challenge = Scene.create(story: "You walk into the doors of Flatiron School’s Clarke campus 15 minutes late. 
 Yoan looks disapprovingly at you and approaches you. 
@@ -20,7 +21,7 @@ You take your code challenge, and luckily you pass. You bring a black coffee bac
 your seat and are met with your match. 20 more labs. Time to get labs done?")
 
 friday_feelings = Scene.create(story: "Yoan shouts, 'Friday Feelingseroni!' 
-You walk into the lecture room and find your seat, and....You're called on first. How're you feeling?"))
+You walk into the lecture room and find your seat, and....You're called on first. How're you feeling?")
 
 comm_happy_hour = Scene.create(story: "So is everyone. 3...2...1....CSS and DESIST!!! Luckily, it's just about community happy hour, 
 and Sebastian just pulled up with 24 24 packs of budweiser. 
