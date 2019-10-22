@@ -1,4 +1,3 @@
-# require_relative '../config/environment'
 require 'tty'
 
 def welcome
@@ -7,18 +6,7 @@ def welcome
     puts "Hello there!"
     puts
     puts
-    puts "~" * 40
-    puts "~" * 30
-    puts "~" * 20
-    puts "~" * 10
-    puts "Welcome to Flatiron Simulator 9000!"
-    puts "~" * 10
-    puts "~" * 20
-    puts "~" * 30
-    puts "~" * 40
-    puts
-    puts
-    # puts "What's your name?"
+    Catpix::print_image "Flatiron-Logo.jpg"
 end
 
 # def get_user_input

@@ -12,9 +12,14 @@ GEM
       minitest (~> 5.1)
       tzinfo (~> 1.1)
       zeitwerk (~> 2.1, >= 2.1.8)
+    catpix (0.2.0)
+      docopt (~> 0.5, >= 0.5.0)
+      rmagick (~> 2.15, >= 2.15.2)
+      ruby-terminfo (~> 0.1, >= 0.1.1)
+      tco (~> 0.1, >= 0.1.8)
     coderay (1.1.2)
     concurrent-ruby (1.1.5)
-    diff-lcs (1.3)
+    docopt (0.6.1)
     equatable (0.5.0)
     faker (2.6.0)
       i18n (>= 1.6, < 1.8)
@@ -35,6 +40,8 @@ GEM
       rack
     rake (13.0.0)
     require_all (2.0.0)
+    rmagick (2.16.0)
+    ruby-terminfo (0.1.1)
     sinatra (2.0.7)
       mustermann (~> 1.0)
       rack (~> 2.0)
@@ -44,64 +51,18 @@ GEM
       activerecord (>= 3.2)
       sinatra (>= 1.0)
     sqlite3 (1.4.0)
+    tco (0.1.8)
     thread_safe (0.3.6)
     tilt (2.0.10)
-    tty (0.7.0)
-      equatable (~> 0.5.0)
-      pastel (~> 0.7.0)
-      tty-color (~> 0.4.0)
-      tty-command (~> 0.4.0)
-      tty-cursor (~> 0.4.0)
-      tty-editor (~> 0.2.0)
-      tty-file (~> 0.3.0)
-      tty-pager (~> 0.7.0)
-      tty-platform (~> 0.1.0)
-      tty-progressbar (~> 0.10.0)
-      tty-prompt (~> 0.12.0)
-      tty-screen (~> 0.5.0)
-      tty-spinner (~> 0.4.0)
-      tty-table (~> 0.8.0)
-      tty-which (~> 0.3.0)
     tty-color (0.4.3)
-    tty-command (0.4.0)
-      pastel (~> 0.7.0)
     tty-cursor (0.4.0)
-    tty-editor (0.2.0)
-      tty-prompt (~> 0.12.0)
-      tty-which (~> 0.3.0)
-    tty-file (0.3.0)
-      diff-lcs (~> 1.3.0)
-      pastel (~> 0.7.0)
-      tty-prompt (~> 0.12.0)
-    tty-pager (0.7.1)
-      tty-screen (~> 0.5.0)
-      tty-which (~> 0.3.0)
-      verse (~> 0.5.0)
-    tty-platform (0.1.0)
-    tty-progressbar (0.10.1)
-      tty-screen (~> 0.5.0)
     tty-prompt (0.12.0)
       necromancer (~> 0.4.0)
       pastel (~> 0.7.0)
       tty-cursor (~> 0.4.0)
       wisper (~> 1.6.1)
-    tty-screen (0.5.1)
-    tty-spinner (0.4.1)
-    tty-table (0.8.0)
-      equatable (~> 0.5.0)
-      necromancer (~> 0.4.0)
-      pastel (~> 0.7.0)
-      tty-screen (~> 0.5.0)
-      unicode-display_width (~> 1.1.0)
-      verse (~> 0.5.0)
-    tty-which (0.3.0)
     tzinfo (1.2.5)
       thread_safe (~> 0.1)
-    unicode-display_width (1.1.3)
-    unicode_utils (1.4.0)
-    verse (0.5.0)
-      unicode-display_width (~> 1.1.0)
-      unicode_utils (~> 1.4.0)
     wisper (1.6.1)
     zeitwerk (2.2.0)
 
@@ -110,13 +71,15 @@ PLATFORMS
 
 DEPENDENCIES
   bundler
+  catpix
   faker
   pry
   rake
   require_all
+  rmagick
   sinatra-activerecord
   sqlite3 (= 1.4)
-  tty
+  tty-prompt
 
 BUNDLED WITH
    2.0.2
