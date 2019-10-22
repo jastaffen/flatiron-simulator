@@ -22,7 +22,7 @@ ActiveRecord::Schema.define(version: 2019_10_21_212319) do
     t.string "story"
   end
 
-  create_table "useroptions", force: :cascade do |t|
+  create_table "user_options", force: :cascade do |t|
     t.integer "user_id"
     t.integer "option_id"
   end
