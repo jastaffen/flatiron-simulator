@@ -183,32 +183,27 @@ end
 
 def small_break
     puts
-    puts "=" * 204
+    puts "=" * 178
     puts
 end
 
 def big_break
     puts
-    puts "=" * 204
+    puts "=" * 178
     puts
-    puts "~" * 204
+    puts "~" * 178
     puts
-    puts "*" * 204
+    puts "*" * 178
     puts
-    puts "=" * 204
-
+    puts "=" * 178
     # Catpix::print_image "Flatiron-Logo.jpg"
-
-    puts "=" * 204
+    puts "=" * 178
     puts
-    puts "*" * 204
+    puts "*" * 178
     puts
-    puts "~" * 204
+    puts "~" * 178
     puts
-    puts "=" * 204
+    puts "=" * 178
     puts
-
 end
-
-
 
