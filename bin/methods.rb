@@ -1,10 +1,11 @@
 require 'tty/prompt'
 
 class CLI
-    attr_accessor :coffee_count
+    attr_accessor :coffee_count, :mod1_project
 
     def initialize
         @coffee_count = 0
+        @mod1_project = ""
     end
 
 def welcome
@@ -38,6 +39,7 @@ def user_login
 end
 
 def storyline
+
     story = Scene.first.story
     story["**//**"] = @u1.name.upcase
     puts "#{story}"
@@ -70,7 +72,12 @@ def storyline
         choice = Option.find_by(text: decision_text)
         uo1 = UserOption.create(user_id: @u1.id, option_id: choice.id)
         2.times {puts}
+        if choice.to_scene.id == 8 || choice.to_scene.id == 12
+            choice.to_scene.story["**//**"] = @u1.name
+
+        end
         check_story if choice.id == 21
+
         2.times {puts}
         if choice.to_scene_id == 11 || choice.to_scene_id == 12
             small_break
@@ -82,47 +89,76 @@ def storyline
         end
 
     end
+
     2.times {puts}
     puts "** " * 12
     puts 
     puts "#{Scene.last.story}"
     puts 
+
     puts "** " * 12
+
 end
 
 def check_story
     coffee_number = TTY::Prompt.new
     coffee_option = Option.find(21)
-    num = coffee_number.ask(coffee_option.text) {|q| q.in('0-1000000000')}
+    num = coffee_number.ask("How many cups of coffee do you need?") {|q| q.in('0-1000000000')}
     @coffee_count += num.to_i
     coffee_option.to_scene
 end 
 
+def mod_project_idea
+
+end
+
 def runner
     welcome
+
     unless start == 'exit'
+
         @u1 = user_login
-        @u1name = @u1.name
+        # @u1name = @u1.name
         small_break
+
+
         puts "Howdy #{@u1.name}! 🤠"
         yes_or_no = TTY::Prompt.new
         yes_or_no.keypress("Ready to begin Flatiron Simulator 9,000? Press Enter to begin!")
+
+
         big_break
-        get_user = @u1.name
+
+
+        # get_user = @u1.name
         storyline
+
+
         2.times {puts}
         view_your_stats = TTY::Prompt.new
         stats = view_your_stats.select("Do you want to view your experience?", ["yes", "no"])
         2.times {puts}
+
+
         if stats == "yes"
             puts "HERE IS WHAT YOU DID, #{@u1.name}!"
             2.times {puts}
-            @u1.options.each { |option| puts "#{option.from_scene.story} \n \n #{option.text} \n \n" }
-            puts 
-            puts "#{@u1.options.last.to_scene.story}"
+            @u1.options.each do |option| 
+                if option.from_scene.story["**//**"]
+                    option.from_scene.story["**//**"] = @u1.name
+                end
+                puts "#{option.from_scene.story} \n \n #{option.text} \n \n" 
+            end
+            puts
+
+            last_scene = Scene.find(12).story
+            last_scene["**//**"] = @u1.name
+            puts "#{last_scene}"
             puts
             puts "Coffee Count: #{@coffee_count}"
         end
+
+
         @u1.user_options.destroy_all
     end
 end
@@ -143,7 +179,9 @@ def big_break
     puts "*" * 204
     puts
     puts "=" * 204
-    #Catpix::print_image "Flatiron-Logo.jpg"
+
+    # Catpix::print_image "Flatiron-Logo.jpg"
+
     puts "=" * 204
     puts
     puts "*" * 204
@@ -152,4 +190,8 @@ def big_break
     puts
     puts "=" * 204
     puts
+
 end
+
+end
+

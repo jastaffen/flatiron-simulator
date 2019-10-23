@@ -49,8 +49,8 @@ Caryn is asking you what you did this weekend. What are you going to say?")
 #8
 response_to_weekend = Scene.create(story: "Caryn nods her head but clearly 
 appears to notice the dark bags under your eyes and the waver in your voice. 
-She looks concerned, but responds \"Good (user). Code challenge today!\" 
-Oh......................\nThis is not good. 
+She looks concerned, but responds \"Ok... That's nice, **//**. Wanted to let you know that there is a code challenge today!\" 
+Oh......................\n This is not good. 
 You need coffee. ")
 
 #9 coffee_num
@@ -76,7 +76,7 @@ You're moving onto mod-2. Congratulations! 🎉 🎊 💪 🧠 🎊 🎉 💩")
 #12 Flatiron Simulator
 flatiron_simulator_complete = Scene.create(story: "Avi sees your code for Flatiron Simulator 9000 and drops to the floor in utter awe, 
 takes out a lighter and burns his copy of “The Well Grounded Rubyist”, and joins a welding school. 
-Tim Apple loves the program so much that he rolls out iOS (user).")
+Tim Apple loves the program so much that he rolls out iOS **//**.")
 
 #13 END GAME
 thanks = Scene.create(story: "THANKS FOR PLAYING!! \n \nCreated by Jack 🐘 💨 and Babs 🌈 😊")
