@@ -1,14 +1,15 @@
 #1
 code_challenge = Scene.create(story: "You walk into the doors of Flatiron School’s Clarke campus 15 minutes late. 
 Yoan looks disapprovingly at you and approaches you. 
-'! Code challenge at 11. You better be late because you were getting those reps in last night.' 
-You were not. You were perusing uniqlo’s online catalogue for heat tech to wear to Flatiron the next day. 
+\"(user)! Code challenge at 11. You better be late because you were getting those reps in last night. 💪 \" 
+You were not. 
+You were perusing uniqlo’s online catalogue for heat tech to wear to Flatiron the next day. 
 Now this?! What will you do?")
 
 #2
-passed_the_challenge = Scene.create(story: "Well, you perservered and passed the test. 
+passed_the_challenge = Scene.create(story: "You perservered and passed the test. 
 You can now move on with the rest of your class. Good work. As you bask in your victory, 
-20 labs are released you have a newfound confidence. Time to get labs done?")
+20 labs are released, but you have a newfound confidence. Time to get some labs done?")
 
 #3
 no_can_do = Scene.create(story: "Nice try. Your attempts at rebellion were thwarted. 
