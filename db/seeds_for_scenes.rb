@@ -3,7 +3,7 @@ require_relative '../bin/methods.rb'
 
 #1
 code_challenge = Scene.create(story: "You walk into the doors of Flatiron School’s Clarke campus 15 minutes late. 
-Yoan looks disapprovingly at you and approaches you. 
+Tony looks disapprovingly at you and approaches you. 
 \"**//**! Code challenge at 11. You better be late because you were getting those reps in last night. 💪 \" 
 You were not. 
 You were perusing UNIQLO’s online catalogue for the latest heat tech to wear to Flatiron the next day. 
@@ -34,7 +34,7 @@ Now that you've sufficiently shared your feelings, time to drink!")
 
 #6
 comm_party = Scene.create(story: "Programming is so one hour ago. You party it up with the other programmers. 🤠 🍻
-#{"~" * 100} \nHappy hour is winding down and the 'weisers are running dry. Time to head home and hit the mattress hard.
+#{"~" * 105} \nHappy hour is winding down and the 'weisers are running dry. Time to head home and hit the mattress hard.
 You come back on Monday and Yoan deploys the prompt for the mod-1 project. A curious mod-3 student approaches 
 you and asks you what you're doing for your project....SO? What are you doing?")
 

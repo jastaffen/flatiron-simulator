@@ -12,7 +12,6 @@ def welcome
     2.times {puts}
     puts "Hello there!"
     2.times {puts}
-    #Catpix::print_image "Flatiron-Logo.jpg"
 end
 
 def start
@@ -92,11 +91,12 @@ def storyline
     end
 
     2.times {puts}
-    puts "** " * 11
+    puts "** " * 12
     puts 
     puts "#{Scene.last.story}"
     puts 
-    puts "** " * 11
+
+    puts "** " * 12
 
 end
 
@@ -179,7 +179,9 @@ def big_break
     puts "*" * 204
     puts
     puts "=" * 204
+
     # Catpix::print_image "Flatiron-Logo.jpg"
+
     puts "=" * 204
     puts
     puts "*" * 204
@@ -188,4 +190,8 @@ def big_break
     puts
     puts "=" * 204
     puts
+
 end
+
+end
+
