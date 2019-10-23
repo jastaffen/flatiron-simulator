@@ -47,10 +47,9 @@ Oh no.
 Caryn is asking you what you did this weekend. What are you going to say?")
 
 #8
-response_to_weekend = Scene.create(story: "Caryn nods her head but clearly 
-appears to notice the dark bags under your eyes and the waver in your voice. 
+response_to_weekend = Scene.create(story: "Caryn nods her head but clearly appears to notice the dark bags under your eyes and the waver in your voice. 
 She looks concerned, but responds \"Ok... That's nice, **//**. Wanted to let you know that there is a code challenge today!\" 
-Oh......................\n This is not good. 
+Oh......................\nThis is not good. 
 You need coffee. ")
 
 #9 coffee_num

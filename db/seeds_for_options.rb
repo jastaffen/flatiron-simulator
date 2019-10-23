@@ -35,8 +35,8 @@ option21 = Option.create(text: "How many cups of coffee do you need?", from_scen
 #if coffee_num >= 4 scene 9, else scene 10 *doesn't accept 0
 
 #puppiesdownstairs
-option22 = Option.create(text: "A winged British bulldog with a 
-giant tattoo that says \"RevolutionDamnation\" on his back", from_scene_id: 9, to_scene_id: 10)
+option22 = Option.create(text: "A winged British bulldog with a giant tattoo 
+ that says \"RevolutionDamnation\" on his back", from_scene_id: 9, to_scene_id: 10)
 option23 = Option.create(text: "A corgi with a howl that sounds awfully like he's saying \"do while\"", from_scene_id: 9, to_scene_id: 10)
 option24 = Option.create(text: "A three-headed chihuahua that's bark is 3.times {puts \"bark\"}", from_scene_id: 9, to_scene_id: 10)
 option25 = Option.create(text: "A great dane with a desperate look on his face who keeps saying \"please clap...\"", from_scene_id: 9, to_scene_id: 10)
