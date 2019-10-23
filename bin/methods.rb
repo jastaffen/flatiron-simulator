@@ -1,5 +1,8 @@
 require 'tty/prompt'
 
+class CLI
+
+
 def welcome
     2.times {puts}
     puts "Hello there!"
@@ -31,7 +34,15 @@ def user_login
     user
 end
 
+
+
+def coffees
+    coffee_number = TTY::Prompt.new
+    user_input = coffee_number.ask("How many cups of coffee would you like?") { |q| q.in('0-100000000000000')}
+end
+
 def storyline
+    Scene.first.reload
     puts "#{Scene.first.story}"
     keyhit = TTY::Prompt.new
     puts
@@ -75,6 +86,7 @@ def runner
     welcome
     unless start == 'exit'
         @u1 = user_login
+        @u1name = @u1.name
         puts "=" * 50
         puts
         puts "Howdy #{@u1.name}! 🤠"
@@ -96,7 +108,7 @@ def runner
         @u1.user_options.destroy_all
     end
 end
-
+end
 
         # puts
         # puts "=" * 50 

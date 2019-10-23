@@ -1,5 +1,8 @@
+require 'tty'
 require_relative '../config/environment'
 require_relative 'methods.rb'
 
-runner
+cli = CLI.new
+
+cli.runner
 

@@ -1,3 +1,4 @@
+require_relative '../config/environment'
 #from code_challenge
 option1 = Option.create(text: "Bunker down, get some coffee, and get those reps in 💪🧠", from_scene_id: 1, to_scene_id: 2)
 option2 = Option.create(text: "Watch Youtube and turn the thermostat up to 76", from_scene_id: 1, to_scene_id: 3)
@@ -29,7 +30,8 @@ option19 = Option.create(text: "So many labs did I...So much work done omg. Must
 option20 = Option.create(text: "I think I relaxed. 😬", from_scene_id: 7, to_scene_id: 8)
 
 #coffeecups
-option21 = Option.create(text: "(coffee_number = gets.chomp)", from_scene_id: 8, to_scene_id: 9) 
+
+option21 = Option.create(text: "**coffee cups**", from_scene_id: 8, to_scene_id: 9) 
 #if coffee_num >= 4 scene 9, else scene 10 *doesn't accept 0
 
 #puppiesdownstairs
