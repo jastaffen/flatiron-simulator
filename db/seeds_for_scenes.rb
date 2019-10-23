@@ -51,8 +51,7 @@ response_to_weekend = Scene.create(story: "Caryn nods her head but clearly
 appears to notice the dark bags under your eyes and the waver in your voice. 
 She looks concerned, but responds \"Good (user). Code challenge today!\" 
 Oh......................\n This is not good. 
-You need coffee. 
-How many cups of coffee do you need?")
+You need coffee. ")
 
 #9 coffee_num
 throw_up = Scene.create(story: "You throw up. That did not work, but at least you're awake now. 
