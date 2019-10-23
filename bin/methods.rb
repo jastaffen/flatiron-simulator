@@ -2,11 +2,12 @@ require 'tty/prompt'
 
 class CLI
 
+
 def welcome
     2.times {puts}
     puts "Hello there!"
     2.times {puts}
-    Catpix::print_image "Flatiron-Logo.jpg"
+    #Catpix::print_image "Flatiron-Logo.jpg"
 end
 
 def start
@@ -45,7 +46,7 @@ def storyline
     puts "#{Scene.first.story}"
     keyhit = TTY::Prompt.new
     puts
-    keyhit.keypress("press a key")
+    keyhit.keypress("press any key to continue")
     puts
     options = TTY::Prompt.new
     2.times {puts}
@@ -57,7 +58,7 @@ def storyline
         puts "#{choice.to_scene.story}"
         puts
         keyhit2 = TTY::Prompt.new
-        keyhit2.keypress("press something!")
+        keyhit2.keypress("press Enter to continue")
         puts
         options = TTY::Prompt.new
         2.times {puts}
@@ -69,7 +70,7 @@ def storyline
             puts "#{choice.to_scene.story}"
             next_scene = TTY::Prompt.new
             2.times {puts}
-            next_scene.keypress("Press any key to continue")
+            next_scene.keypress("press Enter to continue")
             break
         end
     end
@@ -83,7 +84,6 @@ end
 
 def runner
     welcome
-    # start
     unless start == 'exit'
         @u1 = user_login
         @u1name = @u1.name
@@ -91,20 +91,8 @@ def runner
         puts
         puts "Howdy #{@u1.name}! 🤠"
         yes_or_no = TTY::Prompt.new
-        yes_or_no.keypress("Ready to begin Flatiron Simulator 9,000? Press any key to begin!")
+        yes_or_no.keypress("Ready to begin Flatiron Simulator 9,000? Press Enter to begin!")
         puts
-        puts "=" * 50 
-        puts "=" * 40
-        puts "=" * 30
-        puts "=" * 20
-        puts "=" * 10
-        puts "SPLAT!" + " " * 30 + "git vom!"
-        puts "~" * 10
-        puts "~" * 20
-        puts "~" * 30
-        puts "~" * 40
-        puts "~" * 50
-        puts 
         storyline
         2.times {puts}
         view_your_stats = TTY::Prompt.new
@@ -120,5 +108,18 @@ def runner
         @u1.user_options.destroy_all
     end
 end
-
 end
+
+        # puts
+        # puts "=" * 50 
+        # puts "=" * 40
+        # puts "=" * 30
+        # puts "=" * 20
+        # puts "=" * 10
+        # puts "SPLAT!" + " " * 30 + "git vom!"
+        # puts "~" * 10
+        # puts "~" * 20
+        # puts "~" * 30
+        # puts "~" * 40
+        # puts "~" * 50
+        # puts 
