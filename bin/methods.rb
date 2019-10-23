@@ -11,7 +11,6 @@ def welcome
     2.times {puts}
     puts "Hello there!"
     2.times {puts}
-    #Catpix::print_image "Flatiron-Logo.jpg"
 end
 
 def start
@@ -38,20 +37,7 @@ def user_login
     user
 end
 
-# def get_user
-#     self.user_login.name
-# end
-
-
-
-# def coffees
-#     coffee_number = TTY::Prompt.new
-#     user_input = coffee_number.ask("How many cups of coffee would you like?") { |q| q.in('0-100000000000000')}
-# end
-
 def storyline
-
-    # Scene.first.reload
     story = Scene.first.story
     story["**//**"] = @u1.name.upcase
     puts "#{story}"
@@ -97,11 +83,11 @@ def storyline
 
     end
     2.times {puts}
-    puts "** " * 11
+    puts "** " * 12
     puts 
     puts "#{Scene.last.story}"
     puts 
-    puts "** " * 11
+    puts "** " * 12
 end
 
 def check_story
@@ -157,7 +143,7 @@ def big_break
     puts "*" * 204
     puts
     puts "=" * 204
-    Catpix::print_image "Flatiron-Logo.jpg"
+    #Catpix::print_image "Flatiron-Logo.jpg"
     puts "=" * 204
     puts
     puts "*" * 204
@@ -167,17 +153,3 @@ def big_break
     puts "=" * 204
     puts
 end
-
-        # puts
-        # puts "=" * 50 
-        # puts "=" * 40
-        # puts "=" * 30
-        # puts "=" * 20
-        # puts "=" * 10
-        # puts "SPLAT!" + " " * 30 + "git vom!"
-        # puts "~" * 10
-        # puts "~" * 20
-        # puts "~" * 30
-        # puts "~" * 40
-        # puts "~" * 50
-        # puts 
