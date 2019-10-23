@@ -1,7 +1,7 @@
 require_relative '../config/environment'
 #from code_challenge
-option1 = Option.create(text: "Bunker down, get some coffee, and get those reps in 💪🧠", from_scene_id: 1, to_scene_id: 2)
-option2 = Option.create(text: "Watch Youtube and turn the thermostat up to 76", from_scene_id: 1, to_scene_id: 3)
+option1 = Option.create(text: "Bunker down, get some coffee, and get those reps in 💪 🧠", from_scene_id: 1, to_scene_id: 2)
+option2 = Option.create(text: "Watch Youtube and turn the thermostat up to 76°", from_scene_id: 1, to_scene_id: 3)
 option3 = Option.create(text: "Run.", from_scene_id: 1, to_scene_id: 3)
 
 #from passed_the_challenge and no_can_do

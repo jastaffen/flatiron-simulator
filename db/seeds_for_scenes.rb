@@ -33,13 +33,13 @@ and Sebastian just pulled up with twenty-four 24 packs of Budweiser.
 Now that you've sufficiently shared your feelings, time to drink!")
 
 #6
-comm_party = Scene.create(story: "Programming is so one hour ago. You party it up with the other programmers. 🤠🍻
-#{"=" * 70} \nHappy hour is winding down and the 'weisers are running dry. Time to head home and hit the mattress hard.
+comm_party = Scene.create(story: "Programming is so one hour ago. You party it up with the other programmers. 🤠 🍻
+#{"~" * 100} \nHappy hour is winding down and the 'weisers are running dry. Time to head home and hit the mattress hard.
 You come back on Monday and Yoan deploys the prompt for the mod-1 project. A curious mod-3 student approaches 
 you and asks you what you're doing for your project....SO? What are you doing?")
 
 #7
-comm_labs = Scene.create(story: "Bunker down, get some ☕️ (or 🍺), and get those 💪💪💪💪 in. It's game ⏰. 
+comm_labs = Scene.create(story: "Bunker down, get some ☕️ (or 🍺), and get those 💪 💪 💪 💪 in. It's game ⏰. 
 Or?............\n..................\n....................\n........................
 You wake up. It's Monday. You have no recollection of doing any labs. 
 You're still in the seat you were in Friday night. Your classmates are walking in and getting situated. 
@@ -62,7 +62,7 @@ You need to SELECT * FROM dogs WHERE dog.legs > 4. You can't find that, but you 
 Which will you play with?")
 
 #10 actually waking up
-wake_up = Scene.create(story: "You happily snuggle your pup. 🐶❤️
+wake_up = Scene.create(story: "You happily snuggle your pup. 🐶 ❤️ \n
 SUDDENLY!!! \n
 You wake up and realize the puppy scavenger was just a dream, and you're still on Clarke campus. 
 Yoan just deployed the prompt for the mod-1 projects. A curious mod-3 student approaches 
@@ -71,7 +71,7 @@ you and asks you what you're doing for your project....SO? What are you doing?")
 #11 MOD1 project that's not flatiron simulator
 mod1_project_complete = Scene.create(story: "You present your project to the class and all goes well! 
 Yes, you had to reduce your idea a bit, but the MVP did the job. Everyone is impressed. 
-You're moving onto mod-2. Congratulations! 🎉🎊💪🧠🎊🎉💩")
+You're moving onto mod-2. Congratulations! 🎉 🎊 💪 🧠 🎊 🎉 💩")
 
 #12 Flatiron Simulator
 flatiron_simulator_complete = Scene.create(story: "Avi sees your code for Flatiron Simulator 9000 and drops to the floor in utter awe, 
@@ -79,7 +79,7 @@ takes out a lighter and burns his copy of “The Well Grounded Rubyist”, and j
 Tim Apple loves the program so much that he rolls out iOS (user).")
 
 #13 END GAME
-thanks = Scene.create(story: "THANKS FOR PLAYING!! \n \nCreated by Jack 🐘💨 and Babs 🌈😊")
+thanks = Scene.create(story: "THANKS FOR PLAYING!! \n \nCreated by Jack 🐘 💨 and Babs 🌈 😊")
 
 
 
