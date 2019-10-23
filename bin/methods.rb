@@ -1,13 +1,13 @@
 require 'tty/prompt'
 
 class CLI
-
+    
 
 def welcome
     2.times {puts}
     puts "Hello there!"
     2.times {puts}
-    #Catpix::print_image "Flatiron-Logo.jpg"
+    Catpix::print_image "Flatiron-Logo.jpg"
 end
 
 def start
@@ -34,16 +34,22 @@ def user_login
     user
 end
 
+# def get_user
+#     self.user_login.name
+# end
 
 
-def coffees
-    coffee_number = TTY::Prompt.new
-    user_input = coffee_number.ask("How many cups of coffee would you like?") { |q| q.in('0-100000000000000')}
-end
+
+# def coffees
+#     coffee_number = TTY::Prompt.new
+#     user_input = coffee_number.ask("How many cups of coffee would you like?") { |q| q.in('0-100000000000000')}
+# end
 
 def storyline
-    Scene.first.reload
-    puts "#{Scene.first.story}"
+    # Scene.first.reload
+    story = Scene.first.story
+    story["**//**"] = @u1.name.upcase
+    puts "#{story}"
     keyhit = TTY::Prompt.new
     puts
     keyhit.keypress("press any key to continue")
@@ -82,6 +88,10 @@ def storyline
     puts "**"
 end
 
+def check_story
+
+end 
+
 def runner
     welcome
     unless start == 'exit'
@@ -93,6 +103,7 @@ def runner
         yes_or_no = TTY::Prompt.new
         yes_or_no.keypress("Ready to begin Flatiron Simulator 9,000? Press Enter to begin!")
         puts
+        get_user = @u1.name
         storyline
         2.times {puts}
         view_your_stats = TTY::Prompt.new
