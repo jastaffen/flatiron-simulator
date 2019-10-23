@@ -1,7 +1,11 @@
 require 'tty/prompt'
 
 class CLI
-    
+    attr_accessor :coffee_count
+
+    def initialize
+        @coffee_count = 0
+    end
 
 def welcome
     2.times {puts}
@@ -46,6 +50,7 @@ end
 # end
 
 def storyline
+
     # Scene.first.reload
     story = Scene.first.story
     story["**//**"] = @u1.name.upcase
@@ -58,8 +63,15 @@ def storyline
     2.times {puts}
     decision_text = options.select("Choose:", Scene.first.options.map {|option| option.text})
     choice = Option.find_by(text: decision_text)
+
+    if choice.id == 1 || choice.id == 2 || choice.id == 3
+        @coffee_count += 1
+    end
+
     uo1 = UserOption.create(user_id: @u1.id, option_id: choice.id)
     2.times {puts}
+
+
     while choice.to_scene do
         small_break
         puts "#{choice.to_scene.story}"
@@ -71,6 +83,9 @@ def storyline
         decision_text = options.select("Choose:", choice.to_scene.options.map {|option| option.text})
         choice = Option.find_by(text: decision_text)
         uo1 = UserOption.create(user_id: @u1.id, option_id: choice.id)
+        2.times {puts}
+        check_story if choice.id == 21
+        2.times {puts}
         if choice.to_scene_id == 11 || choice.to_scene_id == 12
             small_break
             puts "#{choice.to_scene.story}"
@@ -79,6 +94,7 @@ def storyline
             next_scene.keypress("press Enter to continue")
             break
         end
+
     end
     2.times {puts}
     puts "** " * 11
@@ -89,7 +105,11 @@ def storyline
 end
 
 def check_story
-
+    coffee_number = TTY::Prompt.new
+    coffee_option = Option.find(21)
+    num = coffee_number.ask(coffee_option.text) {|q| q.in('0-1000000000')}
+    @coffee_count += num.to_i
+    coffee_option.to_scene
 end 
 
 def runner
@@ -114,6 +134,8 @@ def runner
             @u1.options.each { |option| puts "#{option.from_scene.story} \n \n #{option.text} \n \n" }
             puts 
             puts "#{@u1.options.last.to_scene.story}"
+            puts
+            puts "Coffee Count: #{@coffee_count}"
         end
         @u1.user_options.destroy_all
     end
