@@ -1,7 +1,7 @@
 require 'tty/prompt'
 
 class CLI
-
+    
 
 def welcome
     2.times {puts}
@@ -12,7 +12,7 @@ end
 
 def start
     prompt = TTY::Prompt.new
-    decision = prompt.select("What do you want to do?", ["start game", "exit"])
+    decision = prompt.select("What would you like to do?", ["start game", "exit"])
 end
 
 def end_game
@@ -34,19 +34,25 @@ def user_login
     user
 end
 
+# def get_user
+#     self.user_login.name
+# end
 
 
-def coffees
-    coffee_number = TTY::Prompt.new
-    user_input = coffee_number.ask("How many cups of coffee would you like?") { |q| q.in('0-100000000000000')}
-end
+
+# def coffees
+#     coffee_number = TTY::Prompt.new
+#     user_input = coffee_number.ask("How many cups of coffee would you like?") { |q| q.in('0-100000000000000')}
+# end
 
 def storyline
-    Scene.first.reload
-    puts "#{Scene.first.story}"
+    # Scene.first.reload
+    story = Scene.first.story
+    story["**//**"] = @u1.name.upcase
+    puts "#{story}"
     keyhit = TTY::Prompt.new
     puts
-    keyhit.keypress("press any key to continue")
+    keyhit.keypress("press Enter to continue")
     puts
     options = TTY::Prompt.new
     2.times {puts}
@@ -55,18 +61,18 @@ def storyline
     uo1 = UserOption.create(user_id: @u1.id, option_id: choice.id)
     2.times {puts}
     while choice.to_scene do
+        small_break
         puts "#{choice.to_scene.story}"
-        puts
         keyhit2 = TTY::Prompt.new
-        keyhit2.keypress("press Enter to continue")
         puts
+        keyhit2.keypress("press Enter to continue")
         options = TTY::Prompt.new
-        2.times {puts}
+        puts
         decision_text = options.select("Choose:", choice.to_scene.options.map {|option| option.text})
         choice = Option.find_by(text: decision_text)
         uo1 = UserOption.create(user_id: @u1.id, option_id: choice.id)
-        2.times {puts}
         if choice.to_scene_id == 11 || choice.to_scene_id == 12
+            small_break
             puts "#{choice.to_scene.story}"
             next_scene = TTY::Prompt.new
             2.times {puts}
@@ -75,24 +81,28 @@ def storyline
         end
     end
     2.times {puts}
-    puts "**"
+    puts "** " * 11
     puts 
     puts "#{Scene.last.story}"
     puts 
-    puts "**"
+    puts "** " * 11
 end
+
+def check_story
+
+end 
 
 def runner
     welcome
     unless start == 'exit'
         @u1 = user_login
         @u1name = @u1.name
-        puts "=" * 50
-        puts
+        small_break
         puts "Howdy #{@u1.name}! 🤠"
         yes_or_no = TTY::Prompt.new
         yes_or_no.keypress("Ready to begin Flatiron Simulator 9,000? Press Enter to begin!")
-        puts
+        big_break
+        get_user = @u1.name
         storyline
         2.times {puts}
         view_your_stats = TTY::Prompt.new
@@ -108,6 +118,32 @@ def runner
         @u1.user_options.destroy_all
     end
 end
+end
+
+def small_break
+    puts
+    puts "=" * 204
+    puts
+end
+
+def big_break
+    puts
+    puts "=" * 204
+    puts
+    puts "~" * 204
+    puts
+    puts "*" * 204
+    puts
+    puts "=" * 204
+    Catpix::print_image "Flatiron-Logo.jpg"
+    puts "=" * 204
+    puts
+    puts "*" * 204
+    puts
+    puts "~" * 204
+    puts
+    puts "=" * 204
+    puts
 end
 
         # puts
