@@ -36,13 +36,13 @@ option21 = Option.create(text: "How many cups of coffee do you need?", from_scen
 
 #puppiesdownstairs
 option22 = Option.create(text: "A winged British bulldog with a giant tattoo 
- that says \"RevolutionDamnation\" on his back", from_scene_id: 9, to_scene_id: 10)
+  that says \"RevolutionDamnation\" on his back", from_scene_id: 9, to_scene_id: 10)
 option23 = Option.create(text: "A corgi with a howl that sounds awfully like he's saying \"do while\"", from_scene_id: 9, to_scene_id: 10)
 option24 = Option.create(text: "A three-headed chihuahua that's bark is 3.times {puts \"bark\"}", from_scene_id: 9, to_scene_id: 10)
 option25 = Option.create(text: "A great dane with a desperate look on his face who keeps saying \"please clap...\"", from_scene_id: 9, to_scene_id: 10)
 
 #mod1 options
-option26 = Option.create(text: "What's your dream mod1 project?", from_scene_id: 10, to_scene_id: 11)
+option26 = Option.create(text: "What's your dream mod-1 project?", from_scene_id: 10, to_scene_id: 11)
 option27 = Option.create(text: "A search engine where you can type in anything and it'll return a multitude of related links", from_scene_id: 10, to_scene_id: 11)
 option28 = Option.create(text: "A CLI app game that predicts what Harry Potter house you would be in and sends you your robe in the mail", from_scene_id: 10, to_scene_id: 11)
 option29 = Option.create(text: "A CLI app game that turns up the thermostat by the number of points the winner receives", from_scene_id: 10, to_scene_id: 11)
@@ -50,7 +50,7 @@ option30 = Option.create(text: "A button that delivers milk anywhere in the worl
 option31 = Option.create(text: "Flatiron Simulator 9000", from_scene_id: 10, to_scene_id: 12)
 
 #mod1 options for scene 6ers
-option32 = Option.create(text: "What's your dream mod1 project?", from_scene_id: 6, to_scene_id: 11)
+option32 = Option.create(text: "What's your dream mod-1 project?", from_scene_id: 6, to_scene_id: 11)
 option33 = Option.create(text: "A search engine where you can type in anything and it'll return a multitude of related links", from_scene_id: 6, to_scene_id: 11)
 option34 = Option.create(text: "A CLI app game that predicts what Harry Potter house you would be in and sends you your robe in the mail", from_scene_id: 6, to_scene_id: 11)
 option35 = Option.create(text: "A CLI app game that turns up the thermostat by the number of points the winner receives", from_scene_id: 6, to_scene_id: 11)

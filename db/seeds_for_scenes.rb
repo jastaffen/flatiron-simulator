@@ -34,7 +34,7 @@ Now that you've sufficiently shared your feelings, time to drink!")
 
 #6
 comm_party = Scene.create(story: "Programming is so one hour ago. You party it up with the other programmers. 🤠 🍻
-#{"~" * 105} \nHappy hour is winding down and the 'weisers are running dry. Time to head home and hit the mattress hard.
+#{"~" * 109} \nHappy hour is winding down and the 'weisers are running dry. Time to head home and hit the mattress hard.
 You come back on Monday and Yoan deploys the prompt for the mod-1 project. A curious mod-3 student approaches 
 you and asks you what you're doing for your project....SO? What are you doing?")
 
@@ -48,7 +48,7 @@ Caryn is asking you what you did this weekend. What are you going to say?")
 
 #8
 response_to_weekend = Scene.create(story: "Caryn nods her head but clearly appears to notice the dark bags under your eyes and the waver in your voice. 
-She looks concerned, but responds \"Ok... That's nice, **//**. Wanted to let you know that there is a code challenge today!\" 
+She looks concerned, but responds \"Ok....That's nice, **//**. Wanted to let you know that there is a code challenge today!\" 
 Oh......................\nThis is not good. 
 You need coffee. ")
 
