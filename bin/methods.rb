@@ -31,7 +31,9 @@ class CLI
         elsif user.downcase == "gene"
             user = User.create(name: "RevolutionDamnation")
         elsif user.downcase == "tony"
-            user = User.create(name: "poop")
+            user = User.create(name: "p.o.o.p.")
+        elsif user.downcase == "caryn" || user.downcase == "sebastian" || user.downcase == "yoan" 
+            user = User.create(name: "Anonymous student")
         else
             user = User.create(name: user)
         end
@@ -138,7 +140,7 @@ class CLI
             small_break
 
 
-            puts "Howdy #{@u1.name}! 🤠"
+            puts "Howdy #{@u1.name.upcase}! 🤠"
             yes_or_no = TTY::Prompt.new
             yes_or_no.keypress("Ready to begin Flatiron Simulator 9,000? Press Enter to begin!")
 
