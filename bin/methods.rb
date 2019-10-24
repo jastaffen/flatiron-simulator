@@ -106,7 +106,7 @@ class CLI
     def coffee_input
         coffee_number = TTY::Prompt.new
         coffee_option = Option.find(21)
-        num = coffee_number.ask("Add here:") {|q| q.in('0-1000000000')}
+        num = coffee_number.ask("Add here:") {|q| q.in('1-1000000000')}
         @coffee_count += num.to_i
         coffee_option.to_scene
     end 
@@ -140,7 +140,7 @@ class CLI
             small_break
 
 
-            puts "Howdy #{@u1.name.upcase}! 🤠"
+            puts "Howdy #{@u1.name}! 🤠"
             yes_or_no = TTY::Prompt.new
             yes_or_no.keypress("Ready to begin Flatiron Simulator 9,000? Press Enter to begin!")
 
@@ -162,16 +162,20 @@ class CLI
                 puts "HERE IS WHAT YOU DID, #{@u1.name}!"
                 2.times {puts}
                     @u1.options.each do |option| 
+                        
                         if option.from_scene.story["**//**"]
-                        option.from_scene.story["**//**"] = @u1.name
+                            option.from_scene.story["**//**"] = @u1.name
                         end
-                puts "#{option.from_scene.story} \n \n #{option.text} \n \n" 
-                end
-                puts
-
-                last_scene = Scene.find(12).story
-                last_scene["**//**"] = @u1.name
-                puts "#{last_scene}"
+                        puts "#{option.from_scene.story} \n \n #{option.text} \n \n" 
+                        if option.to_scene.id == 11
+                            puts "#{Scene.find(11).story}"
+                        elsif option.to_scene.id == 12
+                            last_scene = Scene.find(12).story
+                            last_scene["**//**"] = @u1.name
+                            puts "#{last_scene}"
+                        end
+                    end
+                
                 puts
                 puts "Coffee Count: #{@coffee_count}"
                 puts "Mod1 Project: #{@mod1_project}"
