@@ -9,9 +9,9 @@ class CLI
     end
 
     def welcome
-        2.times {puts}
+        smallest_break
         puts "Hello there!"
-        2.times {puts}
+        smallest_break
     end
 
     def start
@@ -50,7 +50,7 @@ class CLI
         keyhit.keypress("press Enter to continue")
         puts
         options = TTY::Prompt.new
-        2.times {puts}
+        smallest_break
         decision_text = options.select("Choose:", Scene.first.options.map {|option| option.text})
         choice = Option.find_by(text: decision_text)
 
@@ -59,7 +59,7 @@ class CLI
         end
 
         uo1 = UserOption.create(user_id: @u1.id, option_id: choice.id)
-        2.times {puts}
+        smallest_break
 
 
         while choice.to_scene do
@@ -93,13 +93,13 @@ class CLI
             end
         end
 
-        2.times {puts}
-        puts "** " * 12
+        smallest_break
+        puts "** " * 13
         puts 
         puts "#{Scene.last.story}"
         puts 
 
-        puts "** " * 12
+        puts "** " * 13
 
     end
 
@@ -140,7 +140,7 @@ class CLI
             small_break
 
 
-            puts "Howdy #{@u1.name.upcase}! 🤠"
+            puts "Howdy #{@u1.name}! 🤠"
             yes_or_no = TTY::Prompt.new
             yes_or_no.keypress("Ready to begin Flatiron Simulator 9,000? Press Enter to begin!")
 
@@ -152,15 +152,15 @@ class CLI
             storyline
 
 
-            2.times {puts}
+            smallest_break
             view_your_stats = TTY::Prompt.new
             stats = view_your_stats.select("Do you want to view your experience?", ["yes", "no"])
-            2.times {puts}
+            smallest_break
 
 
             if stats == "yes"
                 puts "HERE IS WHAT YOU DID, #{@u1.name}!"
-                2.times {puts}
+                smallest_break
                     @u1.options.each do |option| 
                         if option.from_scene.story["**//**"]
                         option.from_scene.story["**//**"] = @u1.name
@@ -174,13 +174,17 @@ class CLI
                 puts "#{last_scene}"
                 puts
                 puts "Coffee Count: #{@coffee_count}"
-                puts "Mod1 Project: #{@mod1_project}"
+                puts "Mod-1 Project: #{@mod1_project}"
             end
 
 
             @u1.user_options.destroy_all
         end
     end
+end
+
+def smallest_break
+    2.times {puts}
 end
 
 def small_break
