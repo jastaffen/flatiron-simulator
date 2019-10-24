@@ -1,5 +1,7 @@
 require 'tty/prompt'
+require 'linguistics'
 require_relative 'storyline.rb'
+
 
 class CLI
     attr_accessor :coffee_count, :mod1_project
@@ -60,7 +62,7 @@ class CLI
                 if option.from_scene.story["**//**"]
                     option.from_scene.story["**//**"] = @u1.name
                 end
-                puts "#{option.from_scene.story} \n \n #{option.text} \n \n" 
+                puts "#{option.from_scene.story} \n \n #{option.text.white} \n \n" 
                 if option.to_scene.id == 11
                     puts "#{Scene.find(11).story}"
                 elsif option.to_scene.id == 12
@@ -111,6 +113,7 @@ class CLI
         puts
         puts "=" * 178
         puts
+
     end
 
     def ending_style
