@@ -146,7 +146,6 @@ class CLI
                 puts "HERE IS WHAT YOU DID, #{@u1.name}!"
                 smallest_break
                     @u1.options.each do |option| 
-                        
                         if option.from_scene.story["**//**"]
                             option.from_scene.story["**//**"] = @u1.name
                         end
@@ -159,14 +158,14 @@ class CLI
                             puts "#{last_scene}"
                         end
                     end
-                
                 puts
                 puts "Coffee Count: #{@coffee_count}"
                 puts "Mod-1 Project: #{@mod1_project}"
             end
-
-
             @u1.user_options.destroy_all
+
+            
+
         end
     end
 end
