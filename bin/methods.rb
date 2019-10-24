@@ -19,7 +19,7 @@ class CLI
     end
 
     def start
-        decision = prompt.select("What would you like to do?", ["start game", "exit"])
+        prompt.select("What would you like to do?", ["start game", "exit"])
     end
 
     def end_game
@@ -47,13 +47,11 @@ class CLI
         story = Scene.first.story
         story["**//**"] = @u1.name.upcase
         puts "#{story}"
-        keyhit = prompt
         puts
-        keyhit.keypress("press Enter to continue")
+        prompt.keypress("press Enter to continue")
         puts
-        options = prompt
         smallest_break
-        decision_text = options.select("Choose:", Scene.first.options.map {|option| option.text})
+        decision_text = prompt.select("Choose:", Scene.first.options.map {|option| option.text})
         choice = Option.find_by(text: decision_text)
 
         if choice.id == 1 || choice.id == 2 || choice.id == 3
@@ -67,12 +65,10 @@ class CLI
         while choice.to_scene do
             small_break
             puts "#{choice.to_scene.story}"
-            keyhit2 = prompt
             puts
-            keyhit2.keypress("press Enter to continue")
-            options = prompt
+            prompt.keypress("press Enter to continue")
             puts
-            decision_text = options.select("Choose:", choice.to_scene.options.map {|option| option.text})
+            decision_text = prompt.select("Choose:", choice.to_scene.options.map {|option| option.text})
             choice = Option.find_by(text: decision_text)
             uo1 = UserOption.create(user_id: @u1.id, option_id: choice.id)
             2.times {puts}
@@ -88,9 +84,8 @@ class CLI
             if choice.to_scene_id == 11 || choice.to_scene_id == 12
                 small_break
                 puts "#{choice.to_scene.story}"
-                next_scene = prompt
                 2.times {puts}
-                next_scene.keypress("press Enter to continue")
+                prompt.keypress("press Enter to continue")
                 break
             end
         end
@@ -106,18 +101,15 @@ class CLI
     end
 
     def coffee_input
-        coffee_number = prompt
         coffee_option = Option.find(21)
-        num = coffee_number.ask("Add here:") {|q| q.in('1-1000000000')}
+        num = prompt.ask("Add here:") {|q| q.in('1-1000000000')}
         @coffee_count += num.to_i
         coffee_option.to_scene
     end 
 
     def mod_project_idea(choice)
         if choice.id == 26 || choice.id == 32
-            mod1 = prompt
-            @mod1_project = mod1.ask("Add here:", required: true)
-        
+            @mod1_project = prompt.ask("Add here:", required: true)
         elsif choice.id == 27 || choice.id == 33
             @mod1_project = choice.text
         elsif choice.id == 28 || choice.id == 34
@@ -143,24 +135,13 @@ class CLI
 
 
             puts "Howdy #{@u1.name}! 🤠"
-
-            yes_or_no = prompt
-            yes_or_no.keypress("Ready to begin Flatiron Simulator 9,000? Press Enter to begin!")
-
-
+            prompt.keypress("Ready to begin Flatiron Simulator 9,000? Press Enter to begin!")
             big_break
-
-
         # get_user = @u1.name
             storyline
-
-
             smallest_break
-            view_your_stats = prompt
-            stats = view_your_stats.select("Do you want to view your experience?", ["yes", "no"])
+            stats = prompt.select("Do you want to view your experience?", ["yes", "no"])
             smallest_break
-
-
             if stats == "yes"
                 puts "HERE IS WHAT YOU DID, #{@u1.name}!"
                 smallest_break
