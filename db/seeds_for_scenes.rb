@@ -21,7 +21,7 @@ You take your code challenge, and luckily, you pass. You bring a black coffee ba
 your seat and look at your computer in disbelief. 20 more labs. Time to get labs done?")
 
 #4
-friday_feelings = Scene.create(story: "Before you can decide, Yoan shouts, \"Friday Feelingseroni! 🍕 \" That's a new one!
+friday_feelings = Scene.create(story: "As you settle back down in your chair with a big, heaping bowl of Cheerios, Yoan shouts, \"Friday Feelingseroni! 🍕 \" That's a new one!
 You walk into the lecture room, find your seat, and........
 You're called on first. How're you feeling?")
 
