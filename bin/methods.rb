@@ -1,5 +1,4 @@
 require 'tty/prompt'
-require 'linguistics'
 require_relative 'storyline.rb'
 
 
@@ -40,7 +39,7 @@ class CLI
         user = prompt.ask("What is your name?", required: true)
         if User.find_by_name(user)
             user = User.find_by_name(user)
-        elsif user.downcase == "gene"
+        elsif user.downcase == "gene" 
             user = User.create(name: "RevolutionDamnation")
         elsif user.downcase == "tony"
             user = User.create(name: "p.o.o.p.")
@@ -104,7 +103,7 @@ class CLI
         puts "*" * 178
         puts
         puts "=" * 178
-        # Catpix::print_image "Flatiron-Logo.jpg"
+        Catpix::print_image "Flatiron-Logo.jpg"
         puts "=" * 178
         puts
         puts "*" * 178
