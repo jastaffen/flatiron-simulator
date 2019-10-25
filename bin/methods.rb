@@ -1,8 +1,6 @@
 require 'tty/prompt'
 require 'linguistics'
 require_relative 'storyline.rb'
-require 'lolcat'
-
 
 class CLI
     attr_accessor :coffee_count, :mod1_project
@@ -14,7 +12,6 @@ class CLI
 
     def runner
         welcome
-        #system { echo string here | lolcat -a -d 50} 
         unless start_game == 'exit'
             @u1 = user_login
             small_break
@@ -60,7 +57,6 @@ class CLI
         if stats == "yes"
             ending_style_1
             puts "HERE'S WHAT YOU DID, #{@u1.name}!".cyan
-            #system { echo string here | lolcat -a -d 50} 
             ending_style_2
             smallest_break
             @u1.options.each do |option| 
