@@ -32,7 +32,7 @@ option20 = Option.create(text: "I think I relaxed. 😬", from_scene_id: 7, to_s
 #coffeecups
 
 option21 = Option.create(text: "How many cups of coffee do you need?", from_scene_id: 8, to_scene_id: 9) 
-#if coffee_num >= 4 scene 9, else scene 10 *doesn't accept 0
+#doesn't accept 0
 
 #puppiesdownstairs
 option22 = Option.create(text: "A winged British bulldog with a giant tattoo 

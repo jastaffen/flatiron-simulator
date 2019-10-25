@@ -15,3 +15,5 @@ gem 'rmagick'
 gem 'catpix'
 
 gem 'colorize'
+
+gem 'lolcat'

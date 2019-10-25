@@ -1,7 +1,6 @@
 require 'tty/prompt'
 require_relative 'storyline.rb'
 
-
 class CLI
     attr_accessor :coffee_count, :mod1_project
 
@@ -55,13 +54,15 @@ class CLI
         stats = prompt.select("Do you want to view your experience?", ["yes", "no"])
         smallest_break
         if stats == "yes"
-            puts "HERE IS WHAT YOU DID, #{@u1.name}!"
+            ending_style_1
+            puts "HERE'S WHAT YOU DID, #{@u1.name}!".cyan
+            ending_style_2
             smallest_break
             @u1.options.each do |option| 
                 if option.from_scene.story["**//**"]
                     option.from_scene.story["**//**"] = @u1.name
                 end
-                puts "#{option.from_scene.story} \n \n #{option.text.white} \n \n" 
+                puts "#{option.from_scene.story} \n \n #{option.text.light_red} \n \n" 
                 if option.to_scene.id == 11
                     puts "#{Scene.find(11).story}"
                 elsif option.to_scene.id == 12
@@ -71,8 +72,8 @@ class CLI
                 end
             end
             puts
-            puts "Coffee Count: #{@coffee_count}"
-            puts "Mod-1 Project: #{@mod1_project}"
+            puts "Coffee Count: #{@coffee_count}".cyan
+            puts "Mod-1 Project: #{@mod1_project}".cyan
         end
     end
 ##########################################Prompt Refactor Methods########################################################################
@@ -90,35 +91,45 @@ class CLI
     
     def small_break
         puts
-        puts "=" * 178
+        puts ("=" * 178).cyan
         puts
     end
     
     def big_break
         puts
-        puts "=" * 178
+        puts ("=" * 178).red
         puts
-        puts "~" * 178
+        puts ("~" * 178).yellow
         puts
-        puts "*" * 178
+        puts ("*" * 178).blue
         puts
-        puts "=" * 178
+        puts ("=" * 178).magenta
         Catpix::print_image "Flatiron-Logo.jpg"
-        puts "=" * 178
+        puts ("=" * 178).magenta
         puts
-        puts "*" * 178
+        puts ("*" * 178).blue
         puts
-        puts "~" * 178
+        puts ("~" * 178).yellow
         puts
-        puts "=" * 178
+        puts ("=" * 178).red
         puts
 
     end
 
-    def ending_style
+    def ending_style_1
         puts
-        puts "** " * 13
+        puts ("** " * 13).blue
         puts 
+        puts ("~~ " * 13).magenta
+        puts
+    end
+
+    def ending_style_2
+        puts
+        puts ("~~ " *13).magenta
+        puts
+        puts ("** " * 13).blue
+        puts
     end
 end
 
