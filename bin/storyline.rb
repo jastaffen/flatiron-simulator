@@ -26,9 +26,9 @@ def storyline
             break
         end
     end
-    ending_style
+    ending_style_1
     puts "#{Scene.last.story}" #last_scene
-    ending_style
+    ending_style_2
 end
 
 def first_scene
