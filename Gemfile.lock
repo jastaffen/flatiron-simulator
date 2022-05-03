@@ -27,9 +27,6 @@ GEM
       i18n (>= 1.6, < 1.8)
     i18n (1.7.0)
       concurrent-ruby (~> 1.0)
-    linguistics (2.1.0)
-      loggability (~> 0.11)
-    loggability (0.14.0)
     lolcat (100.0.0)
       manpages (~> 0.6.1)
       optimist (~> 3.0.0)
@@ -37,7 +34,8 @@ GEM
     manpages (0.6.1)
     method_source (0.9.2)
     minitest (5.12.2)
-    mustermann (1.0.3)
+    mustermann (1.1.1)
+      ruby2_keywords (~> 0.0.1)
     necromancer (0.4.0)
     optimist (3.0.0)
     paint (2.1.1)
@@ -47,17 +45,18 @@ GEM
     pry (0.12.2)
       coderay (~> 1.1.0)
       method_source (~> 0.9.0)
-    rack (2.0.7)
-    rack-protection (2.0.7)
+    rack (2.2.3)
+    rack-protection (2.2.0)
       rack
     rake (13.0.0)
     require_all (2.0.0)
     rmagick (2.16.0)
     ruby-terminfo (0.1.1)
-    sinatra (2.0.7)
+    ruby2_keywords (0.0.5)
+    sinatra (2.2.0)
       mustermann (~> 1.0)
-      rack (~> 2.0)
-      rack-protection (= 2.0.7)
+      rack (~> 2.2)
+      rack-protection (= 2.2.0)
       tilt (~> 2.0)
     sinatra-activerecord (2.0.14)
       activerecord (>= 3.2)
@@ -133,7 +132,6 @@ DEPENDENCIES
   catpix
   colorize
   faker
-  linguistics
   lolcat
   pry
   rake
